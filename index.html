@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="icon.png" />
+        <title>Connect 4</title>
+
+        <link rel="stylesheet" href="lib/bootstrap.min.css" />
+        <script src="lib/jquery-3.4.1.slim.min.js"></script>
+        <script src="lib/popper.min.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
+        <script src="lib/sweetalert2@10"></script>
+
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="text-white zoom">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-lg-4 col-sm-12 pt-5">
+                    <h1>CONNECT 4 AI</h1>
+                    <div class="card">
+                        <div class="card-body text-dark">
+                            <h6>
+                                Static Board Evaluation Value :
+                                <span id="static_board_evaluator">-</span>
+                            </h6>
+
+                            <div class="my-3">
+                                <input
+                                    type="checkbox"
+                                    name="play_first"
+                                    id="play_first"
+                                />
+                                <label class="form-check-label" for="play_first"
+                                    >Play First</label
+                                >
+                            </div>
+
+                            <div class="my-3">
+                                <select class="form-control">
+                                    <option value="">
+                                        Minimax + alpha beta pruning
+                                    </option>
+                                </select>
+                            </div>
+
+                            <h5>
+                                Tree Depth :
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    name="tree_depth"
+                                    min="3"
+                                    value="5"
+                                    id="tree_depth"
+                                />
+                            </h5>
+                            <div class="form-group">
+                                <button
+                                    onclick="initialize_game()"
+                                    class="btn btn-success w-25"
+                                >
+                                    Start
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-sm-12 pt-5">
+                    <h3>Board</h3>
+                    <div id="board" class="col-12"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
